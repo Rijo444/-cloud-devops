@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud DevOps Project</title>
+</head>
+
+<body>
+    <h1>Cloud DevOps Project</h1>
+    <p>Frontend is running successfully!</p>
+
+    <button onclick="getBackendMessage()">
+        Check Backend
+    </button>
+
+    <p id="message"></p>
+
+    <script>
+        async function getBackendMessage() {
+            const response = await fetch("http://localhost:3000");
+            const data = await response.text();
+
+            document.getElementById("message").innerText = data;
+        }
+    </script>
+</body>
+</html>
